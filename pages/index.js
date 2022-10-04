@@ -15,7 +15,15 @@ export default function Home() {
             <div>
               <h1 className='text-3xl text-center'>Form</h1>
               <form>
-                <input></input>
+                <div>
+                  <label htmlFor="name">Name</label>
+                  <input id="name" type="text" />
+                </div>
+                <div>
+                  <label htmlFor="message">Message</label>
+                  <textarea id="message" />
+                </div>
+                <button type="submit">Submit</button>
               </form>
             </div>
 
