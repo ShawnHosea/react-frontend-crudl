@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Layout from '../components/layout';
 import Form from '../components/form';
 import Cards from '../components/cards';
-// import FormTwo from '../components/formTwo';
 
 export default function Home() {
   
