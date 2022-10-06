@@ -15,14 +15,12 @@ export default function Home() {
         </Head>
 
         <main>
-          <div className='grid lg:grid-cols-2 gap-4 mt-5 px-5'>
+          <div className='grid lg:grid-cols-2 gap-10 mt-5 px-5'>
             <div>
-              <h1 className='text-3xl text-center'>Form</h1>
               <Form/>
             </div>
 
             <div>
-              <h1 className='text-3xl text-center'>Output</h1>
               <Cards/>
             </div>
           </div>

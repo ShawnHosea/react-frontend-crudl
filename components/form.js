@@ -7,6 +7,8 @@ function Form() {
   
   let handleSubmit = async (e) => {
     e.preventDefault();
+	setName("");
+	setMessage("");
 	console.log('name:', name);
 	console.log('message:', message);
 
@@ -36,12 +38,17 @@ function Form() {
       console.log(err);
     }
   };
+  
 
   return (
-    <div>
+    <div className="">
       <form onSubmit={handleSubmit}>
+	  <div className="flex justify-between items-center border-b-2 mb-4 pb-4">
+	  	<h1 className='text-3xl'>Form</h1>
+	  	<button className="p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" type="submit">Create</button>
+	  </div>
 	  	<div>
-			<input className="border rounded border-zinc-400 w-6/12"
+			<input className="mt-2 border rounded border-zinc-400 w-6/12"
 			type="text"
 			value={name}
 			placeholder="Name"
@@ -56,7 +63,7 @@ function Form() {
 			onChange={(e) => setMessage(e.target.value)}
 			/>
 		</div>
-        <button className="mt-4 p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" type="submit">Create</button>
+  
       </form>
     </div>
   );
