@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Layout from '../components/layout';
 import Form from '../components/form';
+import Cards from '../components/cards';
+// import FormTwo from '../components/formTwo';
 
 export default function Home() {
+  
   return (
     <Layout>
       <div>
@@ -20,6 +23,7 @@ export default function Home() {
 
             <div>
               <h1 className='text-3xl text-center'>Output</h1>
+              <Cards/>
             </div>
           </div>
         </main>

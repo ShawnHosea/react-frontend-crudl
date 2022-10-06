@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form() {
+function FormTwo() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   let endpoint = 'https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/product'
@@ -62,4 +62,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default FormTwo;
