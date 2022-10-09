@@ -16,7 +16,6 @@ function Form() {
     try {
       let res = await fetch(endpoint, {
         method: "POST",
-		mode: "no-cors",
 		headers: {
 			'Accept': 'application/json',
 			'Content-type': 'application/json'
@@ -28,7 +27,7 @@ function Form() {
       });
 	  console.log("RIGHT HERE",res)
      await res.json();
-      if (res.status === 200) {
+      if (res.status === 201) {
         setName("");
         setMessage("User created successfully");
       } else {
@@ -43,7 +42,7 @@ function Form() {
   return (
     <div className="">
       <form onSubmit={handleSubmit}>
-	  <div className="flex justify-between items-center border-b-2 mb-4 pb-4">
+	  <div className="flex justify-between items-center border-b border-zinc-400 mb-2 pb-4">
 	  	<h1 className='text-3xl'>Form</h1>
 	  	<button className="p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" type="submit">Create</button>
 	  </div>
