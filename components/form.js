@@ -42,27 +42,26 @@ function Form() {
   return (
     <div className="">
       <form onSubmit={handleSubmit}>
-	  <div className="flex justify-between items-center border-b border-zinc-400 mb-2 pb-4">
+	  <div className="flex justify-between items-center border-b border-zinc-400 pb-4">
 	  	<h1 className='text-3xl'>Form</h1>
-	  	<button className="p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" type="submit">Create</button>
 	  </div>
-	  	<div>
-			<input className="mt-2 border rounded border-zinc-400 w-6/12"
+	  	
+			<input className="mt-4 p-3 border rounded border-zinc-400 w-9/12"
 			type="text"
 			value={name}
 			placeholder="Name"
 			onChange={(e) => setName(e.target.value)}
 			/>
-		</div>
-		<div className="mt-4">
-			<textarea className="border rounded border-zinc-400 w-6/12"
+		
+		
+			<textarea className="mt-4 p-3 border rounded border-zinc-400 w-9/12"
 			type="text"
 			value={message}
 			placeholder="Message"
 			onChange={(e) => setMessage(e.target.value)}
 			/>
-		</div>
-  
+		
+	  	<button className="block mt-4 p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" type="submit">Create</button>
       </form>
     </div>
   );
