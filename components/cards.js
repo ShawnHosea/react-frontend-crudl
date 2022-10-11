@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import DelButton from './delButton';
 
 function Cards() {
 
   let endpoint = 'https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/products'
-//   let endpointDelete = `https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/products/${result.productID}`
+
   const [getResult, setGetResult] = useState([]);
-  const [deleteResult, setDeleteResult] = useState(null);
+  const [id, setId] = useState(null);
+  const delete_id = useRef(null);
+
 
   useEffect(() => {
 	fetch(endpoint)
@@ -21,25 +23,12 @@ function Cards() {
     .catch(error => console.log(error)) // error handling
     /* .catch handles a failure with fetch (e.g. syntax error, no internet connection) */ 
   }, [])
-//   console.log(getResult)
 
   async function deleteDataById() {
-    // const id = delete_id.current.value;
+    const id = delete_id.current.value;
 
-	console.log('HERE', getResult)
-      try {
-        const res = await fetch(`https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/product/${result.productID}`, { method: "delete" });
-
-        const data = await res.json();
-
-        const result = {
-          data: data,
-        };
-		console.log(result)
-        setDeleteResult(fortmatResponse(result));
-      } catch (err) {
-        setDeleteResult(err.message);
-      }
+	console.log(id)
+    await fetch(`https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/product/${id}`, { method: "delete" });
   }
  
   return (
@@ -54,12 +43,11 @@ function Cards() {
 			<div className="flex justify-between items-center mt-4">
 				<small>{result.createdDate}</small>
 				<div>
-					<button className="p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" onClick={deleteDataById}>Delete</button>
+					<button ref={delete_id} value={result.productID} className="p-2 rounded text-white bg-zinc-900 hover:bg-zinc-700" onClick={deleteDataById}>{result.productID}</button>
 				</div>
 			</div>
 		</div>
 		))}
-		
     </div>
   );
 }

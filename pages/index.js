@@ -6,20 +6,6 @@ import Cards from '../components/cards';
 
 
 export default function Home() {
-  
-  // let endpoint = 'https://6hbhuqczsf.execute-api.us-east-1.amazonaws.com/products'
-  // const [getResult, setGetResult] = useState([]);
-
-  // const fetchData = async () => {
-  //   const response = await fetch(endpoint)
-  //   if (!response.ok) {
-  //     throw new Error('Data coud not be fetched!')
-  //   } else {
-  //     return response.json()
-  //   }
-  // }
-
-
 
   return (
     <Layout>

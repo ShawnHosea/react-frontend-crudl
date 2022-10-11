@@ -25,13 +25,13 @@ function Form() {
           message: message,
         }),
       });
-	  console.log("RIGHT HERE",res)
+	
      await res.json();
       if (res.status === 201) {
         setName("");
-        setMessage("User created successfully");
+        setMessage("");
       } else {
-        setMessage("Some error occured");
+        setMessage("");
       }
     } catch (err) {
       console.log(err);
